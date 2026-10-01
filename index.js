@@ -3,8 +3,7 @@ const mineflayer = require('mineflayer');
 const bot = mineflayer.createBot({
   host: 'HerbertCraft.aternos.me', // CHANGE IP
   port: 31487,             // CHANGE PORT
-  username: 'HerbertCraft',     // CHANGE THE USERNAME
-  version: '26.2'        // CHANGE THE VERSION IF YOUR SERVER SUPPORTS A DIFFERENT VERSION
+  username: 'HerbertCraft'     // CHANGE THE USERNAME
 });
 
 // 1. SAFE LOGIN LOGIC
@@ -20,12 +19,11 @@ bot.on('spawn', () => {
     // Send AuthMe commands
     // REMOVE THEM IF YOU DONT USE LOGIN
 
-        
-        startAntiAFK();
-      }
+    setTimeout(() => {
+      startAntiAFK();
     }, 15000); // 15s delay to fix 'wasnt online' and 'x=true' errors
   }
-});e
+});
 
 // 2. SAFE ANTI-AFK (No glitchy packets)
 async function startAntiAFK() {
